@@ -1,0 +1,10 @@
+assign-reviews:
+  only:
+    - schedules
+  image:
+    name: registry.gitlab.com/python-gitlab/python-gitlab:latest
+    entrypoint: [""]
+  script:
+    - echo "Calling Review script for $CI_PROJECT_PATH"
+    - python3 assign_reviewers.py
+
